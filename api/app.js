@@ -1,9 +1,11 @@
 const OpenAI = require("openai");
 const express = require('express')
 const app = express()
+const dotenv = require('dotenv');
+dotenv.config();
 const port = 3000
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: dotenv.OPENAI_API_KEY,
 });
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
